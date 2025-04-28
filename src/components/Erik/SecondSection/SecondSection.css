@@ -1,0 +1,56 @@
+.second-section {
+    width: 65%;
+    margin: auto;
+}
+
+.x__Div {
+    color: #666666;
+    text-transform: uppercase;
+}
+
+.first-section__cards {
+    margin-top: 3rem;
+}
+
+@media (max-width: 1300px) {
+    .second-section {
+        width: 73%;
+        margin: auto;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .second-section {
+        width: 77%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 1100px) {
+    .second-section {
+        width: 82%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 1000px) {
+    .second-section {
+        width: 93%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 902px) {
+    .second-section {
+        width: 95%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .second-section {
+        width: 94%;
+        margin: auto;
+    }
+}

@@ -1,0 +1,69 @@
+.myMap_container {
+    margin-top: 3rem;
+}
+
+.contact_cards_flex {
+    width: 65%;
+    margin: auto;
+}
+
+
+.contact-cards-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.my-container {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.contact-icon {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.contact-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.7s ease;
+}
+
+.car_animation_div {
+    height: auto;
+
+}
+
+.car_animation {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #2E5BCF;
+}
+
+@media (max-width: 768px) {
+    .my-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}

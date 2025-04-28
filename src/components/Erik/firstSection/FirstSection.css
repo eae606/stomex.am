@@ -1,0 +1,329 @@
+.first-section_container {
+  padding-top: 36px;
+}
+
+.first-section {
+  padding: 20px;
+}
+
+.first-section__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.first-section__banner {
+  width: 120px;
+  margin: 0 10px;
+}
+
+.first-section__banner img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.first-section__products {
+  max-width: 900px;
+  width: 100%;
+}
+
+.first-section__title {
+  font-size: 24px;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.center_div_information h2 {
+  text-transform: uppercase;
+  color: #666666;
+}
+
+
+.center_div_information {
+  text-align: center;
+}
+
+.first-section__cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-card {
+  width: 23%;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  position: relative;
+}
+
+.heart_info_two img {
+  width: 20px;
+  height: 20px;
+}
+
+.product-card__new {
+  position: absolute;
+  top: -1px;
+  left: 0px;
+  background: #007bff;
+  color: white;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.product-card__rating {
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  font-size: 14px;
+  display: flex;
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.product-card__info {
+  background-color: white;
+  padding: 1rem;
+}
+
+.product-card__price {
+  padding-left: 1rem;
+}
+
+.product-card__title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.product-card__desc {
+  font-size: 12px;
+  color: gray;
+}
+
+.product-card__price {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-card__actions {
+  padding: 0.3rem;
+  margin-left: 0.6rem;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 22px;
+  background-color: #0056b3;
+}
+
+.buy-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buy-button:hover {
+  background: #0056b3;
+}
+
+.wishlist-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wishlist-button:hover {
+  color: #0056b3;
+}
+
+.content_information_text h2 {
+  color: #666666;
+  text-transform: uppercase;
+}
+
+.mycards {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo_one_text_desc {
+  max-width: 20rem;
+  text-align: center;
+}
+
+.logo_second_text_desc {
+  max-width: 21rem;
+  text-align: center;
+}
+
+.logo_third_text_desc {
+  max-width: 20rem;
+  text-align: center;
+}
+
+.mycards_text {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: baseline;
+}
+
+.mycards_text h3 {
+  color: #666666;
+  font-size: 35px;
+}
+
+.mycards_text p {
+  color: #666666;
+}
+
+.content_information_cards_text {
+  text-align: center;
+}
+
+
+.information_three_lineDiv {
+  width: 100% !important;
+  margin-top: 20px;
+  height: 3px;
+  background-color: #666666;
+}
+
+
+.brands_icons_div_flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+@media (max-width: 1150px) {
+  .first-section__banner {
+    display: none;
+  }
+
+  .first-section__products {
+    margin: auto;
+  }
+
+  .mycards img {
+    width: 10rem;
+    flex-wrap: wrap;
+  }
+
+  .mycards_text h3 {
+    font-size: 25px;
+  }
+
+  .first-section__cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .second_information_cards {
+    max-width: 900px;
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 790px) {
+  .carousel-slide {
+    height: 400px;
+  }
+
+  .mycards_text p {
+    font-size: 14px;
+  }
+
+  .mycards_text {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 30%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .first-section__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .first-section__title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .first-section__cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .product-card {
+    width: 100%;
+  }
+
+  .product-card__image img {
+    height: 200px;
+  }
+
+  .mycards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mycards_text h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .mycards_text p {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .brands_icons_div_flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+@media (max-width: 480px) and (max-width: 767px) {
+  .carousel-slide {
+    height: 350px;
+  }
+}
+
+@media (max-width: 479px) {
+  .carousel-slide {
+    height: 200px;
+  }
+}
