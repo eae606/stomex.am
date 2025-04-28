@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import HamburgerMenu from './HamburgerMenu';
+import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
 
@@ -14,6 +15,7 @@ function Header({ favoritesCount, cartCount, cartItemsCount, changeLanguage }) {
   return (
     <header className="header">
       <div className="background_header"></div>
+
       <div className="container">
         <div className="top-bar">
           <div className="hamburgerMenu">
@@ -52,7 +54,7 @@ function Header({ favoritesCount, cartCount, cartItemsCount, changeLanguage }) {
             </div>
 
             <div className="cart-info">
-              <span>{cartCount} ֏</span> 
+              <span>{cartCount} ֏</span>
             </div>
           </div>
 
@@ -60,7 +62,7 @@ function Header({ favoritesCount, cartCount, cartItemsCount, changeLanguage }) {
             <div className="buy_info">
               <img src="/img/buy_icon.png" alt="Buy Icon" title="buyIcon" />
               {cartItemsCount > 0 && (
-                <span className="buy-count">{cartItemsCount}</span> 
+                <span className="buy-count">{cartItemsCount}</span>
               )}
             </div>
 
@@ -72,8 +74,11 @@ function Header({ favoritesCount, cartCount, cartItemsCount, changeLanguage }) {
             </div>
 
             <div className="user_info">
-              <img src="/img/account_icon.png" alt="User Icon" title="userIcon" />
+              <NavLink to="/register">
+                <img src="/img/account_icon.png" alt="User Icon" title="userIcon" />
+              </NavLink>
             </div>
+
 
             <div className="second_search">
               <img className="search-icon_two" src="/img/search_icon.png" alt="Search Icon" title="SearchIcon" />
@@ -82,24 +87,27 @@ function Header({ favoritesCount, cartCount, cartItemsCount, changeLanguage }) {
         </div>
 
         <div className="logo">
-          <img src="/img/logo.png" alt="Logo" title="webIcon" />
+          <NavLink to="/">
+            <img src="/img/logo.png" alt="Logo" title="webIcon" />
+
+          </NavLink>
         </div>
       </div>
-
       <div className="my_navbar">
         <ul>
-          <li>{t('Խանութներ')}</li>
-          <li>{t('Ընդհանուր')}</li>
-          <li>{t('Թերապիա')}</li>
-          <li>{t('Էնդոդոնտիա')}</li>
-          <li>{t('Օրթոպեդիա')}</li>
-          <li>{t('Օրթոդոնտիա')}</li>
-          <li>{t('Վիրաբուժություն/Պարոդոնտոլոգիա')}</li>
-          <li>{t('Սարքավորումներ')}</li>
-          <li>{t('Լաբորատորիա')}</li>
-          <li>{t('Գրքեր')}</li>
+          <li><NavLink to="/shops" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Խանութներ')}</NavLink></li>
+          <li><NavLink to="/about" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Մեր մասին')}</NavLink></li>
+          <li><NavLink to="/therapy" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Թերապիա')}</NavLink></li>
+          <li><NavLink to="/endodontics" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Էնդոդոնտիա')}</NavLink></li>
+          <li><NavLink to="/orthopedics" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Օրթոպեդիա')}</NavLink></li>
+          <li><NavLink to="/orthodontics" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Օրթոդոնտիա')}</NavLink></li>
+          <li><NavLink to="/surgery" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Վիրաբուժություն/Պարոդոնտոլոգիա')}</NavLink></li>
+          <li><NavLink to="/equipment" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Սարքավորումներ')}</NavLink></li>
+          <li><NavLink to="/laboratory" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Լաբորատորիա')}</NavLink></li>
+          <li><NavLink to="/books" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Գրքեր')}</NavLink></li>
         </ul>
       </div>
+
     </header>
   );
 }

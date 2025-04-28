@@ -30,11 +30,13 @@ const HamburgerMenu = () => {
         onClose={onClose}
         open={open}
         width={250}
-        maskStyle={{
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        }}
-        bodyStyle={{
-          backgroundColor: '#fff',
+        styles={{
+          mask: {
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          },
+          body: {
+            backgroundColor: '#fff',
+          }
         }}
         className="hamburger-drawer"
       >
@@ -51,10 +53,11 @@ const HamburgerMenu = () => {
             { key: '8', label: 'Սպառվող նյութեր' },
             { key: '9', label: 'Լաբորատորիա' },
             { key: '10', label: 'Գրենական' }
-
           ]}
         />
       </Drawer>
+
+
     </div>
   );
 };

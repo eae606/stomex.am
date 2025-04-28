@@ -1,0 +1,154 @@
+.registrationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  /* Пример фонового цвета */
+}
+
+.registrationForm {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  /* Пример ширины */
+}
+
+.registrationForm h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1877f2;
+  /* Пример цвета заголовка */
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.formGroup button {
+  background-color: #1877f2;
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.formGroup button:hover {
+  background-color: #166fe6;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #777;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex-grow: 1;
+  background-color: #ddd;
+  height: 1px;
+  margin: 0 10px;
+}
+
+.socialLoginButton {
+  display: block;
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.facebookButton {
+  background-color: #4267B2;
+}
+
+.facebookButton:hover {
+  background-color: #365899;
+}
+
+.twitterButton {
+  background-color: #1DA1F2;
+}
+
+.twitterButton:hover {
+  background-color: #0d95e8;
+}
+
+button {
+  background-color: #1877f2;
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .registrationForm {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .formGroup input[type="text"],
+  .formGroup input[type="email"],
+  .formGroup input[type="password"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .formGroup button {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .socialLoginButton {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .registrationForm h2 {
+    font-size: 18px;
+  }
+
+  .separator::before,
+  .separator::after {
+    margin: 0 5px;
+  }
+}
