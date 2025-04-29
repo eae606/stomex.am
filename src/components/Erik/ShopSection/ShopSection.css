@@ -1,0 +1,127 @@
+.section_information_style {
+    padding: 20px;
+}
+
+.first-section__title_shop {
+    color: #666666;
+}
+
+.alfaStom__information_div {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 8px;
+}
+
+.alfaStom__information_div .logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.alfaStom__information_div .text-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.alfaStom__information_div .text-content p {
+    margin: 0.25rem 0;
+    color: #555;
+}
+
+
+.myShop__list {
+    display: flex;
+    justify-content: end;
+}
+
+.shop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.sort-select {
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+}
+
+.view-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.view-button {
+    width: 60px;
+    height: 36px;
+    border: none;
+    background: #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_shop_section {
+    margin-top: 2rem;
+}
+.view-button.active {
+    background: #007bff;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 30px;
+    height: 22px;
+    gap: 2px;
+}
+
+.icon-grid div {
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+.icon-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.icon-list div {
+    background-color: #333;
+    height: 3px;
+    border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+    .alfaStom__information_div img {
+        display: block;
+    }
+
+    .alfaStom__information_div  {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 510px) {
+    .sort-select {
+        width: 100%;
+    }
+
+    .shop-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+}

@@ -4,12 +4,21 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
 
-function Header({ favoritesCount, cartCount, cartItemsCount, changeLanguage }) {
+function Header({ favoritesCount, cartCount, cartItemsCount, changeLanguage, favorites = [] }) {
   const { t } = useTranslation();
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+  const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
 
   const toggleLanguageMenu = () => {
     setShowLanguageMenu(!showLanguageMenu);
+  };
+
+  const toggleFavoritesMenu = () => {
+    setIsFavoritesOpen((prev) => !prev);
+  };
+
+  const handleCloseFavorites = () => {
+    setIsFavoritesOpen(false);
   };
 
   return (
@@ -66,7 +75,7 @@ function Header({ favoritesCount, cartCount, cartItemsCount, changeLanguage }) {
               )}
             </div>
 
-            <div className="heart_info">
+            <div className="heart_info" onClick={toggleFavoritesMenu} style={{ cursor: 'pointer' }}>
               <img src="/img/heart_icon.png" alt="Heart Icon" title="heartIcon" />
               {favoritesCount > 0 && (
                 <span className="heart-count">{favoritesCount}</span>
@@ -79,35 +88,119 @@ function Header({ favoritesCount, cartCount, cartItemsCount, changeLanguage }) {
               </NavLink>
             </div>
 
-
             <div className="second_search">
               <img className="search-icon_two" src="/img/search_icon.png" alt="Search Icon" title="SearchIcon" />
             </div>
           </div>
+
+          {isFavoritesOpen && (
+            <div className="favorites-menu">
+              <button
+                onClick={handleCloseFavorites}
+                style={{
+                  position: 'absolute',
+                  top: '50px',
+                  right: '10px',
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '35px',
+                  cursor: 'pointer',
+                  color: "red"
+                  
+                }}
+              >
+                X
+              </button>
+              {favorites.length === 0 ? (
+                <p>Ապրանք չի գտնվել</p>
+              ) : (
+                <>
+                  <h4>Ահա ձեր ապրանքները</h4>
+                  <div className="favorites-list">
+                    {favorites.map((item, index) => (
+                      <div key={index} className="favorite-item">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          style={{
+                            width: '40px',
+                            height: '40px',
+                            marginRight: '10px',
+                            objectFit: 'cover',
+                            borderRadius: '5px',
+                          }}
+                        />
+                        <span>{item.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          )}
         </div>
 
         <div className="logo">
           <NavLink to="/">
             <img src="/img/logo.png" alt="Logo" title="webIcon" />
-
           </NavLink>
         </div>
       </div>
+
       <div className="my_navbar">
         <ul>
-          <li><NavLink to="/shops" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Խանութներ')}</NavLink></li>
-          <li><NavLink to="/about" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Մեր մասին')}</NavLink></li>
-          <li><NavLink to="/therapy" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Թերապիա')}</NavLink></li>
-          <li><NavLink to="/endodontics" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Էնդոդոնտիա')}</NavLink></li>
-          <li><NavLink to="/orthopedics" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Օրթոպեդիա')}</NavLink></li>
-          <li><NavLink to="/orthodontics" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Օրթոդոնտիա')}</NavLink></li>
-          <li><NavLink to="/surgery" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Վիրաբուժություն/Պարոդոնտոլոգիա')}</NavLink></li>
-          <li><NavLink to="/equipment" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Սարքավորումներ')}</NavLink></li>
-          <li><NavLink to="/laboratory" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Լաբորատորիա')}</NavLink></li>
-          <li><NavLink to="/books" className={({ isActive }) => (isActive ? 'active-link' : '')}>{t('Գրքեր')}</NavLink></li>
+          <li>
+            <NavLink to="/shops" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              {t('Խանութներ')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              {t('Մեր մասին')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/therapy" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              {t('Թերապիա')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/endodontics" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              {t('Էնդոդոնտիա')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/orthopedics" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              {t('Օրթոպեդիա')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/orthodontics" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              {t('Օրթոդոնտիա')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/surgery" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              {t('Վիրաբուժություն/Պարոդոնտոլոգիա')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/equipment" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              {t('Սարքավորումներ')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/laboratory" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              {t('Լաբորատորիա')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/books" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              {t('Գրքեր')}
+            </NavLink>
+          </li>
         </ul>
       </div>
-
     </header>
   );
 }

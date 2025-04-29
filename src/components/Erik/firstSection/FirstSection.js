@@ -170,10 +170,6 @@ const FirstSection = ({ onAddToFavorites, onAddToCart }) => {
                 </div>
                 <div className="information_three_lineDiv"></div>
             </div>
-
-            <div className="second_section_div">
-                
-            </div>
         </section>
     );
 };

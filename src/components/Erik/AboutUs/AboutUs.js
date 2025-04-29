@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutUs.css';
 import Footer from '../Footer/Footer';
-import { useTranslation } from 'react-i18next'; 
+import { useTranslation } from 'react-i18next';
 
 const AboutUs = () => {
     const { t } = useTranslation();
@@ -17,8 +17,18 @@ const AboutUs = () => {
                                 <img src='./img/left-banner.png' alt="left banner" className="leftBanner__img" />
                             </div>
                             <div className="video_youtube_div">
-                                <iframe width="800" height="815" src="https://www.youtube.com/embed/bYgnUqITYcQ?si=5V7vw1qO5kAwCUa1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <iframe
+                                    width="800"
+                                    height="815"
+                                    src="https://www.youtube.com/embed/bYgnUqITYcQ?si=5V7vw1qO5kAwCUa1"
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                ></iframe>
                             </div>
+
                             <div className="secondBanner__div">
                                 <img src='./img/right-banner.png' alt="right banner" className="rightBanner__img" />
                             </div>
@@ -47,7 +57,7 @@ const AboutUs = () => {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                />
             </div>
             <div className="footer_div">
                 <Footer />

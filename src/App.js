@@ -10,11 +10,11 @@ import MapSection from './components/Erik/Map Section/MapSection';
 import Footer from './components/Erik/Footer/Footer';
 import AboutUs from './components/Erik/AboutUs/AboutUs';
 import Registration from './components/Erik/Registration/Registration';
-
+import ShopSection from './components/Erik/ShopSection/ShopSection';
 
 function App() {
   const { t, i18n } = useTranslation();
-  const [favoritesCount, setFavoritesCount] = useState(0);
+  const [favorites, setFavorites] = useState([]);  // Для хранения избранных товаров
   const [cartCount, setCartCount] = useState(0);
   const [cartItemsCount, setCartItemsCount] = useState(0);
   const [successMessage, setSuccessMessage] = useState('');
@@ -24,12 +24,13 @@ function App() {
     localStorage.setItem('language', lng);
   };
 
-  const handleAddToFavorites = () => {
-    setFavoritesCount((prev) => prev + 1);
-  };
-
-  const handleSetFavoritesCountHeader = (newCount) => {
-    setFavoritesCount(newCount);
+  const handleAddToFavorites = (product) => {
+    setFavorites((prevFavorites) => {
+      if (prevFavorites.some((fav) => fav.id === product.id)) {
+        return prevFavorites;  // Если товар уже в избранном, не добавляем его снова
+      }
+      return [...prevFavorites, product];
+    });
   };
 
   const handleAddToCart = (price) => {
@@ -54,13 +55,12 @@ function App() {
       <div className="App">
         <Header
           changeLanguage={changeLanguage}
-          favoritesCount={favoritesCount}
+          favoritesCount={favorites.length}  
           cartCount={cartCount}
           cartItemsCount={cartItemsCount}
         />
 
         <Routes>
-
           <Route
             path="/"
             element={
@@ -72,26 +72,15 @@ function App() {
                 <SecondSection
                   onAddToFavorites={handleAddToFavorites}
                   onAddToCart={handleAddToCart}
-                  setFavoritesCountHeader={handleSetFavoritesCountHeader}
                 />
                 <MapSection />
                 <Footer />
               </>
             }
           />
-
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/shops" element={<div style={{ padding: "100px" }}>Խանութներ Էջ</div>} />
-          <Route path="/therapy" element={<div style={{ padding: "100px" }}>Թերապիա Էջ</div>} />
-          <Route path="/endodontics" element={<div style={{ padding: "100px" }}>Էնդոդոնտիա Էջ</div>} />
-          <Route path="/orthopedics" element={<div style={{ padding: "100px" }}>Օրթոպեդիա Էջ</div>} />
-          <Route path="/orthodontics" element={<div style={{ padding: "100px" }}>Օրթոդոնտիա Էջ</div>} />
-          <Route path="/surgery" element={<div style={{ padding: "100px" }}>Վիրաբուժություն/Պարոդոնտոլոգիա Էջ</div>} />
-          <Route path="/equipment" element={<div style={{ padding: "100px" }}>Սարքավորումներ Էջ</div>} />
-          <Route path="/laboratory" element={<div style={{ padding: "100px" }}>Լաբորատորիա Էջ</div>} />
-          <Route path="/books" element={<div style={{ padding: "100px" }}>Գրքեր Էջ</div>} />
+          <Route path="/shops" element={<ShopSection onAddToCart={handleAddToCart} onAddToFavorites={handleAddToFavorites} />} />
           <Route path="/register" element={<Registration />} />
-
         </Routes>
 
         {successMessage && (

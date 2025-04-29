@@ -10,16 +10,25 @@ function Footer() {
             <div className="footer-container">
                 <div className="media_icons_flex">
                     <div className="viber_icon">
-                        <img src="./../img/Viber.png" alt="Viber" className="viber_icon_img" />
+                        <a href='https://www.viber.com/ru/'>
+                            <img src="./../img/Viber.png" alt="Viber" className="viber_icon_img" title='ViberIcon' />
+                        </a>
                     </div>
                     <div className="facebook_icon">
-                        <img src="./../img/fb.png" alt="Facebook" className="facebook_icon_img" />
+                        <a href='https://www.facebook.com/?locale=ru_RU'>
+                            <img src="./../img/fb.png" alt="Facebook" className="facebook_icon_img" title='FacebookIcon' />
+                        </a>
                     </div>
                     <div className="instagram_icon">
-                        <img src="./../img/inst.png" alt="Instagram" className="instagram_icon_img" />
+                        <a href='https://www.instagram.com/'>
+                            <img src="./../img/inst.png" alt="Instagram" className="instagram_icon_img" title='InstagramIcon' />
+                        </a>
                     </div>
                     <div className="whatsapp_icon">
-                        <img src="./../img/whats.png" alt="WhatsApp" className="whatsapp_icon_img" />
+                        <a href='https://www.whatsapp.com/'>
+                            <img src="./../img/whats.png" alt="WhatsApp" className="whatsapp_icon_img" title='WhatAppIcon' />
+
+                        </a>
                     </div>
                 </div>
 

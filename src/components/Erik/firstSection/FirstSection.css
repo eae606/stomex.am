@@ -125,6 +125,7 @@
 }
 
 .buy-button {
+  width: 6rem;
   background: #007bff;
   color: white;
   border: none;

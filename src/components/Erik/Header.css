@@ -75,11 +75,11 @@
 }
 
 .active-link {
-    color: #7b1df7; 
+    color: #7b1df7;
     font-weight: bold;
     border-bottom: 2px solid #7b1df7;
-  }
-  
+}
+
 .cart-info {
     display: flex;
     align-items: center;
@@ -98,6 +98,45 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
+}
+
+
+.favorites-menu {
+    position: absolute;
+    height: 100vh;
+    right: 10px;
+    top: 70px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 350px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 999;
+}
+
+.favorites-menu h4 {
+
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.favorite-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.favorite-item img {
+    border-radius: 5px;
+}
+
+.favorites-list {
+    max-height: 250px;
+    overflow-y: auto;
 }
 
 .global_information_flex {
@@ -217,17 +256,18 @@
 }
 
 .my_navbar ul li {
-    color: white; 
+    color: white;
 }
 
 .my_navbar ul li a {
     text-decoration: none;
-    color: white; 
+    color: white;
 }
 
 .my_navbar ul li a.active-link {
-    color: #6f00ff; 
+    color: #6f00ff;
 }
+
 .phone-icon img {
     width: 20px;
     margin-right: 5px;

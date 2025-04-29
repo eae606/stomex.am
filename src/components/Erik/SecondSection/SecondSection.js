@@ -139,15 +139,7 @@ const SecondSection = ({ setFavoritesCountHeader }) => {
             {heartMessage && <div className="success-message">{heartMessage}</div>}
 
 
-            {/* <div className="cart-info">
-                <div className="cart-count">{cartCount}</div>
-                <div className="cart-total">{cartTotal} ֏</div>
-            </div> */}
-
-
-            {/* <div className="heart-info">
-                <div className="heart-count">{favoritesCount}</div>
-            </div> */}
+          
         </section>
     );
 };
